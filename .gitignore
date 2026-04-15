@@ -1,13 +1,39 @@
 # Dependencies
 node_modules/
+.pnp
+.pnp.js
 
 # Build output
 build/
+dist/
 .docusaurus/
+
+# Lock files (project uses yarn — ignore npm's lock file)
+package-lock.json
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
 
 # OS
 .DS_Store
+Thumbs.db
 
-# Env
-.env
-.env.local
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage/
