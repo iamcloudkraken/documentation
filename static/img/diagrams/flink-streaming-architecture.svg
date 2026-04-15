@@ -1,0 +1,280 @@
+<svg width="960" height="380" viewBox="0 0 960 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+
+  <!-- ── Track line gradients (userSpaceOnUse so they work on horizontal lines) ── -->
+  <!-- Left half: x 0→420, fades in then out toward platform -->
+  <linearGradient id="ll1" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#44E1BC" stop-opacity="0.05"/>
+    <stop offset="45%"  stop-color="#44E1BC" stop-opacity="0.45"/>
+    <stop offset="100%" stop-color="#44E1BC" stop-opacity="0.12"/>
+  </linearGradient>
+  <linearGradient id="ll2" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#2F74F9" stop-opacity="0.05"/>
+    <stop offset="45%"  stop-color="#2F74F9" stop-opacity="0.45"/>
+    <stop offset="100%" stop-color="#2F74F9" stop-opacity="0.12"/>
+  </linearGradient>
+  <linearGradient id="ll3" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#F59E0B" stop-opacity="0.05"/>
+    <stop offset="45%"  stop-color="#F59E0B" stop-opacity="0.45"/>
+    <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.12"/>
+  </linearGradient>
+  <linearGradient id="ll4" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#FF70F1" stop-opacity="0.05"/>
+    <stop offset="45%"  stop-color="#FF70F1" stop-opacity="0.45"/>
+    <stop offset="100%" stop-color="#FF70F1" stop-opacity="0.12"/>
+  </linearGradient>
+
+  <!-- Right half: x 540→960, fades in then out away from platform -->
+  <linearGradient id="lr1" x1="540" y1="0" x2="960" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#44E1BC" stop-opacity="0.12"/>
+    <stop offset="55%"  stop-color="#44E1BC" stop-opacity="0.45"/>
+    <stop offset="100%" stop-color="#44E1BC" stop-opacity="0.05"/>
+  </linearGradient>
+  <linearGradient id="lr2" x1="540" y1="0" x2="960" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#2F74F9" stop-opacity="0.12"/>
+    <stop offset="55%"  stop-color="#2F74F9" stop-opacity="0.45"/>
+    <stop offset="100%" stop-color="#2F74F9" stop-opacity="0.05"/>
+  </linearGradient>
+  <linearGradient id="lr3" x1="540" y1="0" x2="960" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#F59E0B" stop-opacity="0.12"/>
+    <stop offset="55%"  stop-color="#F59E0B" stop-opacity="0.45"/>
+    <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.05"/>
+  </linearGradient>
+  <linearGradient id="lr4" x1="540" y1="0" x2="960" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%"   stop-color="#FF70F1" stop-opacity="0.12"/>
+    <stop offset="55%"  stop-color="#FF70F1" stop-opacity="0.45"/>
+    <stop offset="100%" stop-color="#FF70F1" stop-opacity="0.05"/>
+  </linearGradient>
+
+  <!-- ── Circle radial fills ── -->
+  <radialGradient id="c1" cx="35%" cy="32%" r="68%">
+    <stop offset="0%" stop-color="#a7f3e4"/>
+    <stop offset="100%" stop-color="#44E1BC"/>
+  </radialGradient>
+  <radialGradient id="c2" cx="35%" cy="32%" r="68%">
+    <stop offset="0%" stop-color="#93c5fd"/>
+    <stop offset="100%" stop-color="#2F74F9"/>
+  </radialGradient>
+  <radialGradient id="c3" cx="35%" cy="32%" r="68%">
+    <stop offset="0%" stop-color="#fde68a"/>
+    <stop offset="100%" stop-color="#F59E0B"/>
+  </radialGradient>
+  <radialGradient id="c4" cx="35%" cy="32%" r="68%">
+    <stop offset="0%" stop-color="#f9a8d4"/>
+    <stop offset="100%" stop-color="#FF70F1"/>
+  </radialGradient>
+
+  <!-- ── Platform box gradient ── -->
+  <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#1e3a5f"/>
+    <stop offset="100%" stop-color="#0c1a2e"/>
+  </linearGradient>
+
+  <!-- ── Filters ── -->
+  <filter id="gS" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="gL" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="6" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="ps" x="-25%" y="-12%" width="150%" height="130%">
+    <feDropShadow dx="0" dy="6" stdDeviation="16" flood-color="#060f1e" flood-opacity="0.55"/>
+  </filter>
+
+</defs>
+
+<!-- ── Background ──────────────────────────────────────────────────── -->
+<rect width="960" height="380" fill="#ffffff"/>
+
+<!-- ── Title ───────────────────────────────────────────────────────── -->
+<text x="480" y="36"
+      font-family="Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+      font-size="19" font-weight="700" fill="#0f172a" text-anchor="middle">
+  Apache Flink Streaming — Any Source to Any Sink
+</text>
+<text x="480" y="57"
+      font-family="Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+      font-size="12" fill="#64748b" text-anchor="middle">
+  Real-time pipelines managed end-to-end by STREAMINGPLUS
+</text>
+
+<!--
+  ══════════════════════════════════════════════════════════════════════
+  TRACK Y POSITIONS
+    T1 (teal)  y = 115
+    T2 (blue)  y = 190
+    T3 (amber) y = 265
+    T4 (pink)  y = 338
+
+  REGIONS (x)
+    Left circles:        0  – 175
+    Source labels:     195  – 315  (center x=255)
+    Mid-left circles:  330  – 415
+    Platform box:      425  – 535  (center x=480)
+    Mid-right circles: 545  – 630
+    Sink labels:       645  – 765  (center x=705)
+    Right circles:     785  – 960
+  ══════════════════════════════════════════════════════════════════════
+-->
+
+<!-- ── Gradient track lines (drawn before platform so platform sits on top) ── -->
+<!-- T1 left -->
+<line x1="0" y1="115" x2="420" y2="115" stroke="url(#ll1)" stroke-width="2.5"/>
+<!-- T1 right -->
+<line x1="540" y1="115" x2="960" y2="115" stroke="url(#lr1)" stroke-width="2.5"/>
+<!-- T2 left -->
+<line x1="0" y1="190" x2="420" y2="190" stroke="url(#ll2)" stroke-width="2.5"/>
+<!-- T2 right -->
+<line x1="540" y1="190" x2="960" y2="190" stroke="url(#lr2)" stroke-width="2.5"/>
+<!-- T3 left -->
+<line x1="0" y1="265" x2="420" y2="265" stroke="url(#ll3)" stroke-width="2.5"/>
+<!-- T3 right -->
+<line x1="540" y1="265" x2="960" y2="265" stroke="url(#lr3)" stroke-width="2.5"/>
+<!-- T4 left -->
+<line x1="0" y1="338" x2="420" y2="338" stroke="url(#ll4)" stroke-width="2.5"/>
+<!-- T4 right -->
+<line x1="540" y1="338" x2="960" y2="338" stroke="url(#lr4)" stroke-width="2.5"/>
+
+<!-- ════════════════════════ LEFT CIRCLES ════════════════════════════ -->
+<!-- T1 teal  y=115 -->
+<circle cx="40"  cy="115" r="9"  fill="url(#c1)" opacity="0.7"  filter="url(#gS)"/>
+<circle cx="88"  cy="115" r="12" fill="url(#c1)"                filter="url(#gS)"/>
+<circle cx="140" cy="115" r="8"  fill="url(#c1)" opacity="0.85" filter="url(#gS)"/>
+<!-- T2 blue  y=190 -->
+<circle cx="42"  cy="190" r="8"  fill="url(#c2)" opacity="0.7"  filter="url(#gS)"/>
+<circle cx="90"  cy="190" r="12" fill="url(#c2)"                filter="url(#gS)"/>
+<circle cx="142" cy="190" r="9"  fill="url(#c2)" opacity="0.85" filter="url(#gS)"/>
+<!-- T3 amber y=265 -->
+<circle cx="40"  cy="265" r="10" fill="url(#c3)" opacity="0.7"  filter="url(#gS)"/>
+<circle cx="88"  cy="265" r="13" fill="url(#c3)"                filter="url(#gS)"/>
+<circle cx="140" cy="265" r="8"  fill="url(#c3)" opacity="0.85" filter="url(#gS)"/>
+<!-- T4 pink  y=338 -->
+<circle cx="40"  cy="338" r="9"  fill="url(#c4)" opacity="0.7"  filter="url(#gS)"/>
+<circle cx="88"  cy="338" r="11" fill="url(#c4)"                filter="url(#gS)"/>
+<circle cx="140" cy="338" r="8"  fill="url(#c4)" opacity="0.85" filter="url(#gS)"/>
+
+<!-- ═══════════════════════ SOURCE LABELS ════════════════════════════ -->
+<!-- Labels are vertically centred on their track line -->
+<text x="255" y="107" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0f172a">Kafka</text>
+<text x="255" y="123" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="10.5" fill="#64748b">topic: orders</text>
+
+<text x="255" y="182" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0f172a">Kafka</text>
+<text x="255" y="198" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="10.5" fill="#64748b">topic: clickstream</text>
+
+<text x="255" y="257" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0f172a">Kafka</text>
+<text x="255" y="273" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="10.5" fill="#64748b">topic: metrics</text>
+
+<text x="255" y="330" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0f172a">Kafka</text>
+<text x="255" y="346" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="10.5" fill="#64748b">topic: cdc-events</text>
+
+<!-- ══════════════════════ MID-LEFT CIRCLES ══════════════════════════ -->
+<circle cx="345" cy="115" r="13" fill="url(#c1)" filter="url(#gL)"/>
+<circle cx="398" cy="115" r="9"  fill="url(#c1)" filter="url(#gS)" opacity="0.8"/>
+
+<circle cx="347" cy="190" r="11" fill="url(#c2)" filter="url(#gL)"/>
+<circle cx="400" cy="190" r="8"  fill="url(#c2)" filter="url(#gS)" opacity="0.8"/>
+
+<circle cx="345" cy="265" r="12" fill="url(#c3)" filter="url(#gL)"/>
+<circle cx="398" cy="265" r="9"  fill="url(#c3)" filter="url(#gS)" opacity="0.8"/>
+
+<circle cx="345" cy="338" r="13" fill="url(#c4)" filter="url(#gL)"/>
+<circle cx="398" cy="338" r="8"  fill="url(#c4)" filter="url(#gS)" opacity="0.8"/>
+
+<!-- ════════════════════ CENTRAL PLATFORM BOX ════════════════════════ -->
+<rect x="425" y="82" width="110" height="222" rx="20" fill="url(#pg)" filter="url(#ps)"/>
+<rect x="425" y="82" width="110" height="222" rx="20" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4"/>
+
+<!-- Lightning bolt -->
+<text x="480" y="148"
+      font-family="Apple Color Emoji,'Segoe UI Emoji',NotoColorEmoji,sans-serif"
+      font-size="30" text-anchor="middle">⚡</text>
+
+<!-- "Apache Flink" -->
+<text x="480" y="176"
+      font-family="Inter,-apple-system,sans-serif"
+      font-size="9" font-weight="700" letter-spacing="0.8" fill="#ffffff" text-anchor="middle">Apache Flink</text>
+
+<!-- Divider -->
+<line x1="445" y1="185" x2="515" y2="185" stroke="#1e3a5f" stroke-width="1.5"/>
+
+<!-- "STREAMINGPLUS" -->
+<text x="480" y="200"
+      font-family="Inter,-apple-system,sans-serif"
+      font-size="7" font-weight="600" letter-spacing="1.2" fill="#7dd3fc" text-anchor="middle">STREAMINGPLUS</text>
+
+<!-- Track colour chips + pipeline labels -->
+<rect x="443" y="216" width="5" height="5" rx="1.5" fill="#44E1BC"/>
+<text x="454" y="222" font-family="Inter,-apple-system,sans-serif" font-size="7.5" fill="#cbd5e1">Enrich + Join</text>
+
+<rect x="443" y="230" width="5" height="5" rx="1.5" fill="#2F74F9"/>
+<text x="454" y="236" font-family="Inter,-apple-system,sans-serif" font-size="7.5" fill="#cbd5e1">Session Windows</text>
+
+<rect x="443" y="244" width="5" height="5" rx="1.5" fill="#F59E0B"/>
+<text x="454" y="250" font-family="Inter,-apple-system,sans-serif" font-size="7.5" fill="#cbd5e1">Tumbling Windows</text>
+
+<rect x="443" y="258" width="5" height="5" rx="1.5" fill="#FF70F1"/>
+<text x="454" y="264" font-family="Inter,-apple-system,sans-serif" font-size="7.5" fill="#cbd5e1">Deduplicate</text>
+
+<!-- ══════════════════════ MID-RIGHT CIRCLES ══════════════════════════ -->
+<circle cx="562" cy="115" r="9"  fill="url(#c1)" filter="url(#gS)" opacity="0.8"/>
+<circle cx="615" cy="115" r="13" fill="url(#c1)" filter="url(#gL)"/>
+
+<circle cx="560" cy="190" r="8"  fill="url(#c2)" filter="url(#gS)" opacity="0.8"/>
+<circle cx="613" cy="190" r="11" fill="url(#c2)" filter="url(#gL)"/>
+
+<circle cx="562" cy="265" r="9"  fill="url(#c3)" filter="url(#gS)" opacity="0.8"/>
+<circle cx="615" cy="265" r="12" fill="url(#c3)" filter="url(#gL)"/>
+
+<circle cx="562" cy="338" r="8"  fill="url(#c4)" filter="url(#gS)" opacity="0.8"/>
+<circle cx="615" cy="338" r="13" fill="url(#c4)" filter="url(#gL)"/>
+
+<!-- ════════════════════════ SINK LABELS ═════════════════════════════ -->
+<text x="705" y="107" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0f172a">S3 Data Lake</text>
+<text x="705" y="123" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="10.5" fill="#64748b">Parquet · partitioned</text>
+
+<text x="705" y="182" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0f172a">Elasticsearch</text>
+<text x="705" y="198" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="10.5" fill="#64748b">search · analytics</text>
+
+<text x="705" y="257" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0f172a">Snowflake</text>
+<text x="705" y="273" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="10.5" fill="#64748b">warehouse · BI</text>
+
+<text x="705" y="330" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0f172a">PostgreSQL</text>
+<text x="705" y="346" text-anchor="middle"
+      font-family="Inter,-apple-system,sans-serif" font-size="10.5" fill="#64748b">operational DB</text>
+
+<!-- ══════════════════════ RIGHT CIRCLES ══════════════════════════════ -->
+<!-- T1 teal -->
+<circle cx="820" cy="115" r="8"  fill="url(#c1)" opacity="0.85" filter="url(#gS)"/>
+<circle cx="868" cy="115" r="12" fill="url(#c1)"                filter="url(#gS)"/>
+<circle cx="918" cy="115" r="9"  fill="url(#c1)" opacity="0.7"  filter="url(#gS)"/>
+<!-- T2 blue -->
+<circle cx="820" cy="190" r="9"  fill="url(#c2)" opacity="0.85" filter="url(#gS)"/>
+<circle cx="868" cy="190" r="12" fill="url(#c2)"                filter="url(#gS)"/>
+<circle cx="918" cy="190" r="8"  fill="url(#c2)" opacity="0.7"  filter="url(#gS)"/>
+<!-- T3 amber -->
+<circle cx="820" cy="265" r="8"  fill="url(#c3)" opacity="0.85" filter="url(#gS)"/>
+<circle cx="868" cy="265" r="13" fill="url(#c3)"                filter="url(#gS)"/>
+<circle cx="918" cy="265" r="9"  fill="url(#c3)" opacity="0.7"  filter="url(#gS)"/>
+<!-- T4 pink -->
+<circle cx="820" cy="338" r="9"  fill="url(#c4)" opacity="0.85" filter="url(#gS)"/>
+<circle cx="868" cy="338" r="11" fill="url(#c4)"                filter="url(#gS)"/>
+<circle cx="918" cy="338" r="8"  fill="url(#c4)" opacity="0.7"  filter="url(#gS)"/>
+
+</svg>

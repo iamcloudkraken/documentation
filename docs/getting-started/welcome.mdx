@@ -1,0 +1,133 @@
+---
+id: welcome
+sidebar_label: Welcome
+title: Welcome to STREAMINGPLUS
+slug: /
+---
+
+import ArchDiagram from '@site/src/components/ArchDiagram';
+
+# Welcome to STREAMINGPLUS
+
+STREAMINGPLUS is a **cloud-native streaming infrastructure platform** designed to simplify the deployment, management, and scaling of real-time data pipelines across any cloud environment. Whether you are running Kafka clusters, Flink jobs, Pulsar topics, or custom stream processors, STREAMINGPLUS gives your team a unified control plane to govern it all — without lock-in.
+
+Built for platform engineering teams and data infrastructure teams, STREAMINGPLUS abstracts the complexity of multi-cloud streaming infrastructure behind a clean API, a powerful CLI, and a GitOps-native workflow engine.
+
+---
+
+## What is STREAMINGPLUS?
+
+STREAMINGPLUS is structured around three ideas:
+
+1. **Declarative infrastructure** — Describe your streaming topology in YAML. STREAMINGPLUS reconciles the world to match your intent.
+2. **Multi-cloud by default** — Run pipelines across AWS, GCP, Azure, or on-premises Kubernetes clusters from a single control plane.
+3. **Operator-grade reliability** — Built on Kubernetes-style controllers, mTLS-secured agents, and an OPA policy engine that enforces governance without slowing teams down.
+
+---
+
+## Key Features
+
+| Feature | Description |
+|---|---|
+| **Intuitive Sidebar Navigation** | All documentation, resource references, and guides are organized for fast access via the left-hand sidebar. |
+| **Full-text Search** | Press `Ctrl+K` (or `Cmd+K` on macOS) anywhere in the docs to search across all content instantly. |
+| **Dark Mode** | Toggle between light and dark themes using the icon in the top-right corner of the navigation bar. |
+| **AI Assistant** | Ask questions in natural language to get answers, code snippets, and CLI commands without leaving the docs. |
+| **GitOps Native** | Connect any Git repository as a source of truth. Changes merged to your branch automatically reconcile your infrastructure state. |
+| **Multi-Cloud** | Deploy and manage streaming workloads on AWS (MSK, Kinesis), GCP (Pub/Sub, Dataflow), Azure (Event Hubs), or bare Kubernetes clusters. |
+
+---
+
+## How STREAMINGPLUS Works
+
+At a high level, STREAMINGPLUS sits between your application code and your target cloud providers:
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│                        Your Code / GitOps Repo                  │
+│   (YAML manifests, pipeline definitions, environment configs)   │
+└────────────────────────┬───────────────────────────────────────┘
+                         │
+                         ▼
+┌────────────────────────────────────────────────────────────────┐
+│                       STREAMINGPLUS                             │
+│                                                                │
+│  ┌─────────────┐  ┌──────────────┐  ┌────────────────────┐   │
+│  │  Control    │  │   GitOps     │  │   Policy Engine     │   │
+│  │  Plane API  │  │  Reconciler  │  │   (OPA)             │   │
+│  └─────────────┘  └──────────────┘  └────────────────────┘   │
+│                                                                │
+│  ┌─────────────────────────────────────────────────────────┐  │
+│  │              sp-agent (Data Plane)                       │  │
+│  │  Runs as a DaemonSet on each cluster                     │  │
+│  └─────────────────────────────────────────────────────────┘  │
+└────────────────────────┬───────────────────────────────────────┘
+                         │
+           ┌─────────────┼─────────────┐
+           ▼             ▼             ▼
+        AWS           GCP           Azure
+     (MSK/Kinesis) (Pub/Sub)   (Event Hubs)
+```
+
+### The Flow
+
+1. **You write YAML** (or use the `sp` CLI) to describe your desired streaming state — environments, deployments, pipelines, and connections.
+2. **STREAMINGPLUS validates** your manifests against the policy engine and schema constraints.
+3. **The GitOps Reconciler** watches your connected Git repository and applies changes automatically when new commits land.
+4. **The sp-agent** running in your target cluster receives reconciled state over a secure mTLS gRPC channel and provisions the actual cloud resources.
+
+---
+
+## Apache Flink — Real-Time Streams, Any Source to Any Sink
+
+STREAMINGPLUS connects your Kafka topics to any destination through Apache Flink. Each row below is an independent stream — all running concurrently, all managed from a single control plane.
+
+<img
+  src="/img/diagrams/flink-streaming-architecture.svg"
+  alt="Apache Flink Streaming Architecture"
+  style={{width: '100%', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', marginBottom: '1rem'}}
+/>
+
+| | Sources | Flink Pipeline | Sinks |
+|---|---|---|---|
+| **Stream 1** | Kafka `orders` | Enrich orders with customer data via stream join | S3 Data Lake (Parquet, partitioned by day) |
+| **Stream 2** | Kafka `clickstream` | Session-window funnel analysis | Elasticsearch search index |
+| **Stream 3** | Kafka `metrics` | 1-minute tumbling window aggregation | Snowflake warehouse |
+| **Stream 4** | Kafka `cdc-events` | CDC deduplication and upsert merge | PostgreSQL operational database |
+
+---
+
+## Where to Go Next
+
+Depending on your role and goal, start with one of these paths:
+
+### Get Up and Running Quickly
+
+- [Quickstart](./quickstart.md) — Install the `sp` CLI, log in, create a workspace, and deploy a sample pipeline in under 5 minutes.
+- [Installation](./installation.md) — Full installation guide covering macOS, Linux, Windows, Helm-based control plane setup, and agent registration.
+
+### Understand the Platform
+
+- [Core Concepts](./concepts.md) — Learn the vocabulary: Control Plane, Data Plane, Environments, Deployments, GitOps Sources, Connections, Pipelines, and the Reconciler.
+- [Architecture](../platform/architecture.md) — Deep dive into the control plane components, data plane topology, and how they communicate.
+
+### Use the CLI
+
+- [CLI Reference](../reference/cli.md) — Every `sp` command, flag, and example in one place.
+
+### Explore the API
+
+- [API Reference](../api/overview.md) — The full REST/gRPC API reference for STREAMINGPLUS, including all resource types and their schemas.
+
+---
+
+## Community and Support
+
+- **GitHub**: [github.com/iamcloudkraken/streamingplus](https://github.com/iamcloudkraken/streamingplus)
+- **Discord**: [discord.gg/streamingplus](https://discord.gg/streamingplus)
+- **Status Page**: [status.streamingplus.io](https://status.streamingplus.io)
+- **Support Portal**: [support.streamingplus.io](https://support.streamingplus.io)
+
+---
+
+> STREAMINGPLUS is production software. For enterprise support tiers, SLA commitments, and private deployment options, contact your account team or visit [streamingplus.io/enterprise](https://streamingplus.io/enterprise).
